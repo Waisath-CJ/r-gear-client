@@ -1,6 +1,6 @@
 {
-  "name": "rango-gear-client",
-  "homepage": "https://waisath-cj.github.io/rango-gear-client",
+  "name": "r-gear-client",
+  "homepage": "https://waisath-cj.github.io/r-gear-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
