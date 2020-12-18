@@ -50,6 +50,10 @@ Screenshot will go here
 
 #### Wireframe:
 
-```
-Wireframes will go here
-```
+![Landing Page Wireframe](https://i.imgur.com/Zh7WSVQ.png)
+![Sign Up Wireframe](https://i.imgur.com/PEqpAIs.png)
+![Login Wireframe](https://i.imgur.com/KdpD7Bo.png)
+![Shop Wireframe](https://i.imgur.com/lMLyTZp.png)
+![Change Password Wireframe](https://i.imgur.com/61pNzIU.png)
+![Item Detail Wireframe](https://i.imgur.com/EafEUcF.png)
+![Cart Wireframe](https://i.imgur.com/fdlefGm.png)
