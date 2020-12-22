@@ -1,1 +1,39 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.brand-name {
+  font-family: 'Audiowide', cursive;
+  font-size: 32px;
+}
+
+.banner-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-text {
+  text-align: center;
+  font-size: 26px;
+}
+
+.sign-in-link,
+.sign-up-link,
+.sign-in-link:hover,
+.sign-up-link:hover {
+  color: #D36C07;
+}
+
+.my-button {
+  color: #D36C07;
+  border-color: #D36C07;
+  background-color: #FFFFFF;
+
+  &:hover {
+    color: #000000;
+    background-color: #D36C07;
+  }
+}
