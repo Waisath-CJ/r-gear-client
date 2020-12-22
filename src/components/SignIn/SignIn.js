@@ -77,10 +77,13 @@ class SignIn extends Component {
             <Button
               variant="primary"
               type="submit"
+              className="my-button"
             >
               Submit
             </Button>
           </Form>
+          <br />
+          <p>Don't have an account? <a href="#sign-up" className="sign-up-link">Sign Up</a></p>
         </div>
       </div>
     )
