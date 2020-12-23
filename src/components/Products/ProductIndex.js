@@ -17,7 +17,7 @@ class ProductIndex extends Component {
 
     getProducts(user)
       .then(res => {
-        this.setState({ products: res.data.products })
+        this.setState({ products: res.data })
       })
       .then(() => {
         msgAlert({
