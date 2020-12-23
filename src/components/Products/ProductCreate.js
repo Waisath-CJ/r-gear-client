@@ -1,5 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 import { createProduct } from '../../api/products'
 
@@ -12,8 +14,7 @@ class ProductCreate extends Component {
         name: '',
         description: '',
         price: 0
-      },
-      createdId: null
+      }
     }
   }
 
@@ -33,9 +34,6 @@ class ProductCreate extends Component {
     const { user, msgAlert } = this.props
 
     createProduct(this.state.product, user)
-      .then(res => {
-        this.setState({ createdId: res.data.product._id })
-      })
       .then(() => {
         msgAlert({
           heading: 'Product Create Success',
@@ -43,7 +41,7 @@ class ProductCreate extends Component {
           variant: 'success'
         })
       })
-      .then(() => this.history.push('/products'))
+      .then(() => this.props.history.push('/products'))
       .catch(err => {
         msgAlert({
           heading: 'Product Create Failed',
@@ -55,30 +53,47 @@ class ProductCreate extends Component {
 
   render () {
     return (
-      <Fragment>
-        <h2>Create Product</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="Product name"
-            value={this.state.product.name}
-            onChange={this.handleInputChange}
-            name="name"
-          />
-          <textarea
-            placeholder="Product description"
-            value={this.state.product.description}
-            onChange={this.handleInputChange}
-            name="description"
-          ></textarea>
-          <input
-            placeholder="Product price"
-            value={this.state.product.price}
-            onChange={this.handleInputChange}
-            name="price"
-          />
-          <button className="my-button" type="submit">Submit</button>
-        </form>
-      </Fragment>
+      <div className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+          <h2>Create Product</h2>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group>
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                placeholder="Product name"
+                value={this.state.product.name}
+                onChange={this.handleInputChange}
+                name="name"
+                type="text"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                placeholder="Product description"
+                value={this.state.product.description}
+                onChange={this.handleInputChange}
+                name="description"
+                as="textarea"
+                rows={3}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Price</Form.Label>
+              <Form.Control
+                placeholder="Product price"
+                value={this.state.product.price}
+                onChange={this.handleInputChange}
+                name="price"
+                type="number"
+                min={0}
+                step={0.01}
+              />
+            </Form.Group>
+            <Button className="my-button" type="submit">Add Product</Button>
+          </Form>
+        </div>
+      </div>
     )
   }
 }
