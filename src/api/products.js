@@ -12,10 +12,9 @@ export const createProduct = (prodInfo, user) => {
     },
     data: {
       product: {
-        name: prodInfo.email,
-        description: prodInfo.password,
-        price: prodInfo.passwordConfirmation,
-        owner: user._id
+        name: prodInfo.name,
+        description: prodInfo.description,
+        price: prodInfo.price
       }
     }
   })
@@ -23,7 +22,7 @@ export const createProduct = (prodInfo, user) => {
 
 // GET Products
 // Gets all the products
-export const getProducts = () => {
+export const getProducts = user => {
   return axios({
     url: `${apiUrl}/products`,
     method: 'GET',
@@ -35,7 +34,7 @@ export const getProducts = () => {
 
 // GET Product
 // Gets a single product
-export const getProduct = prodId => {
+export const getProduct = (prodId, user)=> {
   return axios({
     url: `${apiUrl}/products/${prodId}`,
     method: 'GET',
@@ -49,16 +48,16 @@ export const getProduct = prodId => {
 // Updates a single product
 export const updateProduct = (prodInfo, user) => {
   return axios({
-    url: `${apiUrl}/products/${prodId}`,
+    url: `${apiUrl}/products/${prodInfo._id}`,
     method: 'PATCH',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
     data: {
       product: {
-        name: prodInfo.email,
-        description: prodInfo.password,
-        price: prodInfo.passwordConfirmation
+        name: prodInfo.name,
+        description: prodInfo.description,
+        price: prodInfo.price
       }
     }
   })
@@ -66,7 +65,7 @@ export const updateProduct = (prodInfo, user) => {
 
 // DELETE Product
 // Deletes a single product
-export const deleteProduct = prodId => {
+export const deleteProduct = (prodId, user) => {
   return axios({
     url: `${apiUrl}/products/${prodId}`,
     method: 'DELETE',

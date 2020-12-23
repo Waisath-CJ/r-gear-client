@@ -76,6 +76,7 @@ class ChangePassword extends Component {
             <Button
               variant="primary"
               type="submit"
+              className="my-button"
             >
               Submit
             </Button>

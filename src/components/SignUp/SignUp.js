@@ -35,7 +35,7 @@ class SignUp extends Component {
         message: messages.signUpSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/products'))
       .catch(error => {
         this.setState({ email: '', password: '', passwordConfirmation: '' })
         msgAlert({
@@ -90,10 +90,13 @@ class SignUp extends Component {
             <Button
               variant="primary"
               type="submit"
+              className="my-button"
             >
               Submit
             </Button>
           </Form>
+          <br />
+          <p>Already have an account? <a href="#sign-in" className="sign-in-link">Sign In</a></p>
         </div>
       </div>
     )
