@@ -14,8 +14,7 @@ export const createProduct = (prodInfo, user) => {
       product: {
         name: prodInfo.name,
         description: prodInfo.description,
-        price: prodInfo.price,
-        owner: user._id
+        price: prodInfo.price
       }
     }
   })
@@ -56,9 +55,9 @@ export const updateProduct = (prodInfo, user) => {
     },
     data: {
       product: {
-        name: prodInfo.email,
-        description: prodInfo.password,
-        price: prodInfo.passwordConfirmation
+        name: prodInfo.name,
+        description: prodInfo.description,
+        price: prodInfo.price
       }
     }
   })
