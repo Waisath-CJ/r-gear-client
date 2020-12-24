@@ -1,7 +1,7 @@
 {
   "name": "r-gear-client",
   "homepage": "https://waisath-cj.github.io/r-gear-client",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
