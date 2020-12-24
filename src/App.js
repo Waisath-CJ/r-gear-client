@@ -12,7 +12,6 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import LandingPage from './components/LandingPage/LandingPage'
 import ProductCreate from './components/Products/ProductCreate'
 import ProductIndex from './components/Products/ProductIndex'
-import ProductShow from './components/Products/ProductShow'
 
 class App extends Component {
   constructor () {
@@ -75,11 +74,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/add-product' render={() => (
             <ProductCreate msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/products' render={() => (
+          <AuthenticatedRoute user={user} path='/products' render={() => (
             <ProductIndex msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/products/:prodId' render={() => (
-            <ProductShow msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
