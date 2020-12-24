@@ -13,6 +13,7 @@ import LandingPage from './components/LandingPage/LandingPage'
 import ProductCreate from './components/Products/ProductCreate'
 import ProductIndex from './components/Products/ProductIndex'
 import ProductShow from './components/Products/ProductShow'
+import ProductDelete from './components/Products/ProductDelete'
 
 class App extends Component {
   constructor () {
@@ -79,7 +80,10 @@ class App extends Component {
             <ProductIndex msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/products/:prodId' render={() => (
-            <ProductShow msgAlert={this.msgAlert} user={user} />
+            <Fragment>
+              <ProductShow msgAlert={this.msgAlert} user={user} />
+              <ProductDelete msgAlert={this.msgAlert} user={user} />
+            </Fragment>
           )} />
         </main>
       </Fragment>
