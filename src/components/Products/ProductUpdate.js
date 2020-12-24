@@ -13,6 +13,8 @@ const ProductUpdate = props => {
 
     getProduct(match.params.prodId, user)
       .then(res => {
+        if (user.email !== res.data.product.owner)
+          props.history.push('/products')
         setProduct(res.data.product)
       })
       .catch(err => {
@@ -60,7 +62,7 @@ const ProductUpdate = props => {
   return (
     <div className="row">
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
-        <h2>Create Product</h2>
+        <h2>Update Product</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>Name</Form.Label>
