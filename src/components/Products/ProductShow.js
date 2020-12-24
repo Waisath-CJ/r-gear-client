@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import { getProduct } from '../../api/products'
@@ -34,13 +34,15 @@ const ProductShow = props => {
     return <p>Loading...</p>
   } else {
     return (
-      <Fragment>
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-        <Link to={'/products'}>Back to products</Link>
-        <Link to={`/update-product/${product._id}`}>Update product</Link>
-      </Fragment>
+      <div className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>${product.price}</p>
+          <Link to={'/products'}>Back to products</Link>
+          <Link to={`/update-product/${product._id}`}>Update product</Link>
+        </div>
+      </div>
     )
   }
 }
