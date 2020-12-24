@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 import { getProduct } from '../../api/products'
 
@@ -39,8 +40,8 @@ const ProductShow = props => {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>${product.price}</p>
-          <Link to={'/products'}>Back to products</Link>
-          <Link to={`/update-product/${product._id}`}>Update product</Link>
+          <Button className='my-button' onClick={() => props.history.push('/products')}>Back to Products</Button>
+          {props.user.email === product.owner ? (<Button className='my-button' onClick={() => props.history.push(`/update-product/${product._id}`)}>Update Product</Button>) : ''}
         </div>
       </div>
     )
