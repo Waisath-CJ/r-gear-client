@@ -17,7 +17,7 @@ class ProductIndex extends Component {
 
     getProducts(user)
       .then(res => {
-        this.setState({ products: res.data })
+        this.setState({ products: res.data.products })
       })
       .then(() => {
         msgAlert({
@@ -47,7 +47,7 @@ class ProductIndex extends Component {
             <Fragment key={prod._id}>
               <h2>{prod.name}</h2>
               <p>{prod.description}</p>
-              <p>{prod.price}</p>
+              <p>${prod.price}</p>
               <Link to={`/products/${prod._id}`}>See More</Link>
             </Fragment>
           ))}
