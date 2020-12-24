@@ -42,15 +42,17 @@ class ProductIndex extends Component {
       return <p>No products exist in the database :(<br/>You should add one!</p>
     } else {
       return (
-        <div>
-          {this.state.products.map(prod => (
-            <Fragment key={prod._id}>
-              <h2>{prod.name}</h2>
-              <p>{prod.description}</p>
-              <p>{prod.price}</p>
-              <Link to={`/products/${prod._id}`}>See More</Link>
-            </Fragment>
-          ))}
+        <div className="row">
+          <div className="col-sm-10 col-md-8 mx-auto mt-5">
+            {this.state.products.map(prod => (
+              <Fragment key={prod._id}>
+                <h2>{prod.name}</h2>
+                <p>{prod.description}</p>
+                <p>${prod.price}</p>
+                <Link to={`/products/${prod._id}`}>See More</Link>
+              </Fragment>
+            ))}
+          </div>
         </div>
       )
     }
