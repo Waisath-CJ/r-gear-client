@@ -17,9 +17,9 @@ const LandingPage = props => {
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <p className='banner-text'><span className='brand-name'>R Gear</span> - An e-commerce site for employee merchandise</p>
         <img
-          // src={'https://images.unsplash.com/photo-1585185160068-8175b6a39d84?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'}
+          src={'https://thedriven.io/wp-content/uploads/2020/02/Anglo-American.jpg'}
           className='banner-img'
-          alt={'A cup of tea with a book'}
+          alt={'Massive dump truck at a mine'}
         />
         <br /><hr />
         <Button className="my-button" block onClick={signUp}>Sign Up</Button>
