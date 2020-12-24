@@ -1,5 +1,7 @@
-import React, { Component, Fragment } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 import { getProducts } from '../../api/products'
 
@@ -43,16 +45,18 @@ class ProductIndex extends Component {
     } else {
       return (
         <div className="row">
-          <div className="col-sm-10 col-md-8 mx-auto mt-5">
             {this.state.products.map(prod => (
-              <Fragment key={prod._id}>
-                <h2>{prod.name}</h2>
-                <p>{prod.description}</p>
-                <p>${prod.price}</p>
-                <Link to={`/products/${prod._id}`}>See More</Link>
-              </Fragment>
+              <div className='col-sm-5 col-md-5 mx-auto mt-5'>
+                <Card key={prod._id}>
+                  <Card.Header as="h5">{prod.name}</Card.Header>
+                  <Card.Body>
+                    <Card.Title>${prod.price}</Card.Title>
+                    <Card.Text>{prod.description}</Card.Text>
+                    <Button className='my-button' onClick={() => this.props.history.push(`/products/${prod._id}`)}>More Details</Button>
+                  </Card.Body>
+                </Card>
+              </div>
             ))}
-          </div>
         </div>
       )
     }
